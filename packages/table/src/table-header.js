@@ -390,7 +390,7 @@ export default {
             column.width = column.realWidth = columnWidth;
             table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
 
-            this.store.scheduleLayout();
+            this.$nextTick(this.store.scheduleLayout);
 
             document.body.style.cursor = '';
             this.dragging = false;
